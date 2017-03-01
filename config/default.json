@@ -1,0 +1,15 @@
+{
+  "server": {
+    "port": 1337
+  },
+  "database": {
+    "mongodb": {
+      "uri": "localhost/parole"
+    }
+  },
+  "session": {
+    "secret": "parole",
+    "resave": false,
+    "saveUninitialized": false
+  }
+}
