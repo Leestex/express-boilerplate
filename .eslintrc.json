@@ -1,16 +1,12 @@
 {
   "extends": "airbnb-base",
-  "plugins": [
-    // "react",
-    // "jsx-a11y",
-    // "import"
-  ],
   "env": {
     "node": true
   },
   "rules": {
     "semi": ["error", "never"],
     "space-before-function-paren": ["error", "always"],
-    "no-param-reassign": ["error", { "props": false }]
+    "no-param-reassign": ["error", { "props": false }],
+    "no-underscore-dangle": ["error", { "allow": ["_id"] }]
   }
 }

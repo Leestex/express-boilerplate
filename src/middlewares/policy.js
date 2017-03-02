@@ -2,11 +2,12 @@ const Boom = require('boom')
 
 module.exports = {
 
-  authenticated: (req, res) => {
+  authenticated: (req, res, next) => {
     if (req.isAuthenticated()) {
-      return next()
+      next()
+      return
     }
     next(Boom.unauthorized())
-  }
+  },
 
 }

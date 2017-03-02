@@ -7,23 +7,23 @@ const schema = mongoose.Schema({
   username: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
   },
   password: {
     type: String,
     required: true,
-    minlength: 6
-  }
+    minlength: 6,
+  },
 })
 
-schema.pre('save', async function preSave(next) {
+schema.pre('save', async function preSave (next) {
   if (this.isNew) {
     this.password = await bcrypt.hash(this.password, SALT_ROUNDS)
   }
   next()
 })
 
-schema.method('toJSON', function serialize() {
+schema.method('toJSON', function serialize () {
   const obj = this.toObject()
   delete obj.password
 
