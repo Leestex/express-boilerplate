@@ -11,5 +11,8 @@
     "secret": "parole",
     "resave": false,
     "saveUninitialized": false
-  }
+  },
+  "logs": {
+    "level": "debug"
+  },
 }
