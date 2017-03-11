@@ -23,6 +23,10 @@ schema.pre('save', async function preSave (next) {
   next()
 })
 
+schema.method('validPassword', function validPassword (password) {
+  return bcrypt.compare(password, this.password)
+})
+
 schema.method('toJSON', function serialize () {
   const obj = this.toObject()
   delete obj.password

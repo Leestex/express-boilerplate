@@ -4,7 +4,7 @@ const User = require('../../users/model')
 async function verify (username, password, done) {
   const user = await User.findOne({ username })
 
-  if (!user || !user.validPassword(password)) {
+  if (!user || await !user.validPassword(password)) {
     return done(null, false, { message: 'Incorrect credentials' })
   }
 
